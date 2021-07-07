@@ -1,0 +1,31 @@
+PODS:
+  - CompositionalLayoutViewController (0.3.0)
+  - CompositionalLayoutViewControllerViperExtension (0.0.1):
+    - CompositionalLayoutViewController (>= 0.1.0)
+    - PromisesSwift (>= 1.2.0)
+  - PromisesObjC (2.0.0)
+  - PromisesSwift (2.0.0):
+    - PromisesObjC (= 2.0.0)
+
+DEPENDENCIES:
+  - CompositionalLayoutViewControllerViperExtension (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - CompositionalLayoutViewController
+    - PromisesObjC
+    - PromisesSwift
+
+EXTERNAL SOURCES:
+  CompositionalLayoutViewControllerViperExtension:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CompositionalLayoutViewController: 82cd460584ba9e567b9b59b02e7c704c83038412
+  CompositionalLayoutViewControllerViperExtension: cb0591648f6dc29f23566aba1b76f569458c8855
+  PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  PromisesSwift: e0b2a6433469efb0b83a2b84c62a2abab8e5e5d4
+
+PODFILE CHECKSUM: 336d4a218658f073e8b3f826c3a4e8a712b45b4b
+
+COCOAPODS: 1.10.1
