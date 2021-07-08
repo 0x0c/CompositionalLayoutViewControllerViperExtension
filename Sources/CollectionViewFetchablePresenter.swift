@@ -13,5 +13,5 @@ protocol CollectionViewFetchablePresenter {
     var isLoadingPublisher: Published<Bool>.Publisher { get }
 
     @discardableResult
-    func reload() -> Promise<Void>
+    func fetch() -> Promise<Void>
 }
