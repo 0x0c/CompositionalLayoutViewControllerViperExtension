@@ -8,7 +8,7 @@
 import CompositionalLayoutViewController
 import UIKit
 
-protocol CollectionViewPresenterInput: AnyObject {
+public protocol CollectionViewPresenterInput: AnyObject {
     var sections: [CollectionViewSection] { get }
 
     func section(for sectionIndex: Int) -> CollectionViewSection

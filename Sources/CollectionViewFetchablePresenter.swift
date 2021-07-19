@@ -9,7 +9,7 @@ import Combine
 import Foundation
 import Promises
 
-protocol CollectionViewFetchablePresenter {
+public protocol CollectionViewFetchablePresenter {
     var isLoadingPublisher: Published<Bool>.Publisher { get }
 
     @discardableResult

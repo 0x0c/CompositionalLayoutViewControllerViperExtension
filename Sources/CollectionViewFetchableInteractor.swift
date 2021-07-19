@@ -9,17 +9,17 @@ import CompositionalLayoutViewController
 import Foundation
 import Promises
 
-protocol CollectionViewFetchableInteractorInput: AnyObject {
+public protocol CollectionViewFetchableInteractorInput: AnyObject {
     func fetch() -> Promise<[CollectionViewSection]>
 }
 
-protocol CollectionViewFetchableInteractorOutput: AnyObject {
+public protocol CollectionViewFetchableInteractorOutput: AnyObject {
     func willFetchStart()
     func willFetchEnd()
     func didFetchEnd()
 }
 
-extension CollectionViewFetchableInteractorOutput {
+public extension CollectionViewFetchableInteractorOutput {
     func prepareFetch(_ promise: Promise<Void>) {
         willFetchStart()
         promise.always { [weak self] in

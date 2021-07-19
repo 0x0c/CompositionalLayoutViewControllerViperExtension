@@ -8,14 +8,14 @@
 import CompositionalLayoutViewController
 import UIKit
 
-protocol CollectionViewInteractorInput: AnyObject {
+public protocol CollectionViewInteractorInput: AnyObject {
     var sections: [CollectionViewSection] { get set }
 
     func store(_ sections: [CollectionViewSection])
     func section(for sectionIndex: Int) -> CollectionViewSection
 }
 
-extension CollectionViewInteractorInput {
+public extension CollectionViewInteractorInput {
     func store(_ sections: [CollectionViewSection]) {
         self.sections = sections
     }
