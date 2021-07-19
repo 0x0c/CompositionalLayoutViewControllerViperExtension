@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CompositionalLayoutViewControllerViperExtension'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'Extensions for CompositionalLayoutViewController with VIPER'
   s.swift_versions   = '5.2'
 # This description is used to generate tags and improve search results.

@@ -13,5 +13,19 @@ public protocol CollectionViewFetchablePresenter {
     var isLoadingPublisher: Published<Bool>.Publisher { get }
 
     @discardableResult
-    func fetch() -> Promise<Void>
+    func reload() -> Promise<Void>
+    @discardableResult
+    func fetch(force: Bool) -> Promise<Void>
+}
+
+public extension CollectionViewFetchablePresenter {
+    @discardableResult
+    func reload() -> Promise<Void> {
+        return fetch(force: true)
+    }
+
+    @discardableResult
+    func fetch(force: Bool = false) -> Promise<Void> {
+        return fetch(force: force)
+    }
 }
