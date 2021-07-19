@@ -1,5 +1,5 @@
 //
-//  LoadingPublisherAvailable.swift
+//  CollectionViewFetchablePresenter.swift
 //  
 //
 //  Created by Akira Matsuda on 2021/05/31.
