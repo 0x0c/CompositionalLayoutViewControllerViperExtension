@@ -31,6 +31,7 @@ public protocol CollectionViewFetchableInteractorOutput: AnyObject {
 }
 
 public extension CollectionViewFetchableInteractorOutput {
+    @discardableResult
     func prepareFetch<Value>(_ promise: Promise<Value>) -> Promise<Value> {
         willFetchStart()
         promise.always { [weak self] in
