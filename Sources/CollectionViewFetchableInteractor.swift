@@ -31,7 +31,7 @@ public protocol CollectionViewFetchableInteractorOutput: AnyObject {
 }
 
 public extension CollectionViewFetchableInteractorOutput {
-    func prepareFetch(_ promise: Promise<Void>) {
+    func prepareFetch<Value>(_ promise: Promise<Value>) -> Promise<Value> {
         willFetchStart()
         promise.always { [weak self] in
             guard let weakSelf = self else {
@@ -39,5 +39,6 @@ public extension CollectionViewFetchableInteractorOutput {
             }
             weakSelf.didFetchEnd()
         }
+        return promise
     }
 }
