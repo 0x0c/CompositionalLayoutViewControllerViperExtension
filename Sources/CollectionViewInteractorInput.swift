@@ -59,7 +59,7 @@ public protocol CollectionViewInteractorInput: AnyObject {
     var sections: [CollectionViewSection] { get set }
 
     func store(_ sections: [CollectionViewSection])
-    func store(@SectionBuilder _ sections: () -> [CollectionViewSection])
+    func store(@CollectionViewSectionBuilder _ sections: () -> [CollectionViewSection])
     func section(for sectionIndex: Int) -> CollectionViewSection
 }
 
