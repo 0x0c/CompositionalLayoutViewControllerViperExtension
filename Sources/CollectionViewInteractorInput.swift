@@ -10,28 +10,44 @@ import UIKit
 
 @resultBuilder
 public enum StoreBuilder {
-    public static func buildBlock(_ component: CollectionViewSection...) -> [CollectionViewSection] {
-        component
+    public static func buildBlock() -> [CollectionViewSection] {
+        []
+    }
+
+    public static func buildBlock<C: Collection>(_ contents: C...) -> [CollectionViewSection] where C.Element == CollectionViewSection {
+        return contents.flatMap { $0 }
+    }
+
+    public static func buildBlock(_ contents: CollectionViewSection...) -> [CollectionViewSection] {
+        return contents
     }
 
     public static func buildOptional(_ component: [CollectionViewSection]?) -> [CollectionViewSection] {
-        component ?? []
+        return component ?? []
     }
 
     public static func buildEither(first component: [CollectionViewSection]) -> [CollectionViewSection] {
-        component
+        return component
     }
 
     public static func buildEither(second component: [CollectionViewSection]) -> [CollectionViewSection] {
-        component
+        return component
     }
 
-    public static func buildArray(_ component: [[CollectionViewSection]]) -> [CollectionViewSection] {
-        component
+    public static func buildExpression(_ element: CollectionViewSection?) -> [CollectionViewSection] {
+        return element.map { [$0] } ?? []
     }
 
-    public static func buildLimitedAvailability(_ component: [CollectionViewSection]) -> [CollectionViewSection] {
-        component
+    public static func buildExpression(_ element: CollectionViewSection) -> [CollectionViewSection] {
+        return [element]
+    }
+
+    public static func buildExpression<C: Collection>(_ elements: C) -> [CollectionViewSection] where C.Element == CollectionViewSection {
+        Array(elements)
+    }
+
+    public static func buildExpression<C: Collection>(_ elements: C) -> [CollectionViewSection] where C.Element == CollectionViewSection? {
+        elements.compactMap { $0 }
     }
 }
 
