@@ -14,7 +14,7 @@ public enum StoreBuilder {
         items
     }
 
-    public static func buildOptional(_ items: [CollectionViewSection]?) -> [CollectionViewSection] {
+    public static func buildOptional(_ items: [CollectionViewSection]?) -> CollectionViewSection {
         items ?? []
     }
 }
