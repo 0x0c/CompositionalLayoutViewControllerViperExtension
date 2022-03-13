@@ -1,6 +1,6 @@
 PODS:
   - CompositionalLayoutViewController (0.3.0)
-  - CompositionalLayoutViewControllerViperExtension (0.0.1):
+  - CompositionalLayoutViewControllerViperExtension (0.0.3):
     - CompositionalLayoutViewController (>= 0.1.0)
     - PromisesSwift (>= 1.2.0)
   - PromisesObjC (2.0.0)
@@ -22,7 +22,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CompositionalLayoutViewController: 82cd460584ba9e567b9b59b02e7c704c83038412
-  CompositionalLayoutViewControllerViperExtension: cb0591648f6dc29f23566aba1b76f569458c8855
+  CompositionalLayoutViewControllerViperExtension: ab33e1ead3ad697fe5900fffa75af5adaff3920d
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   PromisesSwift: e0b2a6433469efb0b83a2b84c62a2abab8e5e5d4
 
