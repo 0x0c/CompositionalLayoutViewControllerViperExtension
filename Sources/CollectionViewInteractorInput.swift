@@ -10,12 +10,28 @@ import UIKit
 
 @resultBuilder
 public enum StoreBuilder {
-    public static func buildBlock(_ items: CollectionViewSection...) -> [CollectionViewSection] {
-        items
+    public static func buildBlock(_ component: CollectionViewSection...) -> [CollectionViewSection] {
+        component
     }
 
-    public static func buildOptional(_ items: [CollectionViewSection]?) -> CollectionViewSection {
-        items ?? []
+    public static func buildOptional(_ component: [CollectionViewSection]?) -> [CollectionViewSection] {
+        component ?? []
+    }
+
+    public static func buildEither(first component: [CollectionViewSection]) -> [CollectionViewSection] {
+        component
+    }
+
+    public static func buildEither(second component: [CollectionViewSection]) -> [CollectionViewSection] {
+        component
+    }
+
+    public static func buildArray(_ component: [[CollectionViewSection]]) -> [CollectionViewSection] {
+        component
+    }
+
+    public static func buildLimitedAvailability(_ component: [CollectionViewSection]) -> [CollectionViewSection] {
+        component
     }
 }
 
