@@ -9,7 +9,7 @@ import CompositionalLayoutViewController
 import UIKit
 
 @resultBuilder
-public enum StoreBuilder {
+public enum CollectionViewSectionBuilder {
     public static func buildBlock() -> [CollectionViewSection] {
         []
     }
@@ -49,13 +49,17 @@ public enum StoreBuilder {
     public static func buildExpression<C: Collection>(_ elements: C) -> [CollectionViewSection] where C.Element == CollectionViewSection? {
         elements.compactMap { $0 }
     }
+
+    public static func buildArray(_ components: [[CollectionViewSection]]) -> [CollectionViewSection] {
+        components.flatMap { $0 }
+    }
 }
 
 public protocol CollectionViewInteractorInput: AnyObject {
     var sections: [CollectionViewSection] { get set }
 
     func store(_ sections: [CollectionViewSection])
-    func store(@StoreBuilder _ sections: () -> [CollectionViewSection])
+    func store(@SectionBuilder _ sections: () -> [CollectionViewSection])
     func section(for sectionIndex: Int) -> CollectionViewSection
 }
 
@@ -64,7 +68,7 @@ public extension CollectionViewInteractorInput {
         self.sections = sections
     }
 
-    func store(@StoreBuilder _ sections: () -> [CollectionViewSection]) {
+    func store(@CollectionViewSectionBuilder _ sections: () -> [CollectionViewSection]) {
         self.sections = sections()
     }
 
