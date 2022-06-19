@@ -29,7 +29,7 @@ let package = Package(
                 .product(name: "CompositionalLayoutViewController", package: "CompositionalLayoutViewController"),
                 .product(name: "Promises", package: "Promises"),
             ],
-            path: "Source"
+            path: "Sources"
         )
     ]
 )
