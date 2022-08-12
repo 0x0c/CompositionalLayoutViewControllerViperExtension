@@ -7,25 +7,20 @@
 
 import Combine
 import Foundation
-import Promises
 
 public protocol CollectionViewFetchablePresenter {
     var isLoadingPublisher: Published<Bool>.Publisher { get }
 
-    @discardableResult
-    func reload() -> Promise<Void>
-    @discardableResult
-    func fetch(force: Bool) -> Promise<Void>
+    func reload() async throws
+    func fetch(force: Bool) async throws
 }
 
 public extension CollectionViewFetchablePresenter {
-    @discardableResult
-    func reload() -> Promise<Void> {
-        return fetch(force: true)
+    func reload() async throws {
+        try await fetch(force: true)
     }
 
-    @discardableResult
-    func fetch(force: Bool = false) -> Promise<Void> {
-        return fetch(force: force)
+    func fetch(force: Bool = false) async throws {
+        try await fetch(force: force)
     }
 }

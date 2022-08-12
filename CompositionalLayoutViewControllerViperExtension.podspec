@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CompositionalLayoutViewControllerViperExtension'
-  s.version          = '0.0.3'
+  s.version          = '0.1.0'
   s.summary          = 'Extensions for CompositionalLayoutViewController with VIPER'
   s.swift_versions   = '5.2'
 # This description is used to generate tags and improve search results.
@@ -39,6 +39,5 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Combine'
   s.dependency 'CompositionalLayoutViewController', '>= 0.1.0'
-  s.dependency 'PromisesSwift', '>= 1.2.0'
 end
 
