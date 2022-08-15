@@ -25,21 +25,10 @@ public extension CollectionViewFetchableInteractorInput {
 }
 
 public protocol CollectionViewFetchableInteractorOutput: AnyObject {
+    @MainActor
     func willFetchStart()
+    @MainActor
     func willFetchEnd()
+    @MainActor
     func didFetchEnd()
-}
-
-public extension CollectionViewFetchableInteractorOutput {
-    @discardableResult
-    func prepareFetch<Value>(_ promise: Promise<Value>) -> Promise<Value> {
-        willFetchStart()
-        promise.always { [weak self] in
-            guard let weakSelf = self else {
-                return
-            }
-            weakSelf.didFetchEnd()
-        }
-        return promise
-    }
 }
