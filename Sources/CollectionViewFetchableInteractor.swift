@@ -7,7 +7,6 @@
 
 import CompositionalLayoutViewController
 import Foundation
-import Promises
 
 public protocol CollectionViewFetchableInteractorInput: AnyObject {
     func reload() -> [CollectionViewSection]
