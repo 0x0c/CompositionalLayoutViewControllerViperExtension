@@ -10,17 +10,17 @@ import Foundation
 import Promises
 
 public protocol CollectionViewFetchableInteractorInput: AnyObject {
-    func reload() async throws -> [CollectionViewSection]
-    func fetch(force: Bool) async throws -> [CollectionViewSection]
+    func reload() -> [CollectionViewSection]
+    func fetch(force: Bool) -> [CollectionViewSection]
 }
 
 public extension CollectionViewFetchableInteractorInput {
-    func reload() async throws -> [CollectionViewSection] {
-        return try await fetch(force: true)
+    func reload() -> [CollectionViewSection] {
+        return fetch(force: true)
     }
 
-    func fetch(force: Bool = false) async throws -> [CollectionViewSection] {
-        return try await fetch(force: force)
+    func fetch(force: Bool = false) -> [CollectionViewSection] {
+        return fetch(force: force)
     }
 }
 

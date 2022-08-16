@@ -11,16 +11,16 @@ import Foundation
 public protocol CollectionViewFetchablePresenter {
     var isLoadingPublisher: Published<Bool>.Publisher { get }
 
-    func reload() async throws
-    func fetch(force: Bool) async throws
+    func reload()
+    func fetch(force: Bool)
 }
 
 public extension CollectionViewFetchablePresenter {
-    func reload() async throws {
-        try await fetch(force: true)
+    func reload() {
+        fetch(force: true)
     }
 
-    func fetch(force: Bool = false) async throws {
-        try await fetch(force: force)
+    func fetch(force: Bool = false) {
+        fetch(force: force)
     }
 }
