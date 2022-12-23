@@ -12,5 +12,6 @@ public protocol CollectionViewPresenterInput: AnyObject {
     var sections: [CollectionViewSection] { get }
 
     func section(for sectionIndex: Int) -> CollectionViewSection
-    func didItemSelect(indexPath: IndexPath)
+    @MainActor
+    func didSelectItem(at indexPath: IndexPath)
 }
